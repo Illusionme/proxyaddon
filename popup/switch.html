@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="switch.css">
+</head>
+<body>
+	<div id="popup-content">
+		<!--<div class="button switch">Local Proxy</div>
+		<div class="button switch">No Proxy</div>-->
+		<input type="button" value="Local Proxy" id="local">
+		<button id="noproxy">No Proxy</button>
+	</div>
+	<script type="text/javascript">
+		let proxySettings = {
+			proxyType: "manual",
+			http: "http://127.0.0.1:8080"
+		};
+		document.getElementById("local").onclick = function () { 
+				browser.browserSettings.proxyConfig.set({value: proxySettings});
+			};
+	</script>
+</body>
+</html>
